@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../view/horizontal_view.dart';
+import '../view/vertical_view.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -11,9 +12,8 @@ class HomePage extends StatelessWidget {
         appBar: AppBar(
           centerTitle: true,
           backgroundColor: Colors.transparent,
-          elevation: 0,
+          elevation: 100,
           title: const Row(
-            // mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
@@ -32,7 +32,25 @@ class HomePage extends StatelessWidget {
               )
             ],
           ),
+          leading:const Icon(
+            Icons.menu_outlined,
+            color: Colors.orange,
+          ),
+          actions: const [
+            Padding(
+              padding:  EdgeInsets.only(right: 10),
+              child: Icon(
+                Icons.search,
+                color: Colors.orange,
+              ),
+            )
+          ],
         ),
-        body: HorizontalView());
+        body:const CustomScrollView(slivers: [
+          SliverToBoxAdapter(
+            child: HorizontalView(),
+          ),
+          VerticalView()
+        ]));
   }
 }

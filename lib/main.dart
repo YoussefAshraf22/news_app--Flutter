@@ -13,6 +13,7 @@ class NewsApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(useMaterial3: true),
       home:const SafeArea(child: HomePage(),) ,
+      title: 'News App',
     );
   }
 }

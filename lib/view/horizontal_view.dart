@@ -1,6 +1,9 @@
+// ignore_for_file: missing_required_param
+
 import 'package:flutter/material.dart';
 
 import '../models/category_model.dart';
+import '../screens/business.dart';
 import '../screens/entertainment.dart';
 import '../screens/health.dart';
 import '../screens/science.dart';
@@ -13,15 +16,15 @@ class HorizontalView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   final List<Model> category = [
+    final List<Model> category = [
       Model(
-          img: 'assets/entertaiment.jpg',
+          img: 'assets/entertainment.jpg',
           name: 'Enrertaiment',
           onTap: () {
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => EntertainmentPage(),
+                  builder: (context) => const EntertainmentPage(),
                 ));
           }),
       Model(
@@ -31,7 +34,19 @@ class HorizontalView extends StatelessWidget {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => HealthPage(),
+              builder: (context) => const HealthPage(),
+            ),
+          );
+        },
+      ),
+      Model(
+        img: 'assets/business.jpg',
+        name: 'Business',
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const BusinessPage(),
             ),
           );
         },
@@ -43,19 +58,19 @@ class HorizontalView extends StatelessWidget {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => SciencePage(),
+              builder: (context) => const SciencePage(),
             ),
           );
         },
       ),
       Model(
-        img: 'assets/science.avif',
+        img: 'assets/sports.jpg',
         name: 'Sports',
         onTap: () {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => SportsPage(),
+              builder: (context) => const SportsPage(),
             ),
           );
         },
@@ -67,18 +82,22 @@ class HorizontalView extends StatelessWidget {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => TechnologyPage(),
+              builder: (context) => const TechnologyPage(),
             ),
           );
         },
       ),
     ];
 
-    return ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemCount: category.length,
-        itemBuilder: (context, index) => HorizontalContainer(
-              category: category[index],
-            ));
+    return SizedBox(
+      height: 85,
+      child: ListView.builder(
+          physics: const BouncingScrollPhysics(),
+          scrollDirection: Axis.horizontal,
+          itemCount: category.length,
+          itemBuilder: (context, index) => HorizontalContainer(
+                category: category[index],
+              )),
+    );
   }
 }

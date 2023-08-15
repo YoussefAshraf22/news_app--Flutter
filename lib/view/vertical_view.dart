@@ -8,31 +8,43 @@ class VerticalView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   final List<Model> category = [
-    // ignore: missing_required_param
-    Model(
-          img: 'assets/entertaiment.jpg',
-          name: 'Enrertaiment',),
-        // ignore: missing_required_param
+    const List<Model> category = [
+      // ignore: missing_required_param
       Model(
-          img: 'assets/entertaiment.jpg',
-          name: 'Enrertaiment',),
-              // ignore: missing_required_param
-    Model(
-          img: 'assets/entertaiment.jpg',
-          name: 'Enrertaiment',),
-       // ignore: missing_required_param
-    Model(
-          img: 'assets/entertaiment.jpg',
-          name: 'Enrertaiment',),
-        // ignore: missing_required_param
-    Model(
-          img: 'assets/entertaiment.jpg',
-          name: 'Enrertaiment',),
-   ];
-    return  ListView.builder(
+          img: 'assets/entertainment.jpg',
+          name: 'Enrertaiment',
+          name2:
+              'Anything Anything Anything Anything Anything Anything Anything Anything Anything Anything Anything Anything '),
+      // ignore: missing_required_param
+      Model(
+          img: 'assets/entertainment.jpg',
+          name: 'Enrertaiment',
+          name2:
+              'Anything Anything Anything Anything Anything Anything Anything Anything Anything Anything Anything Anything '),
+      // ignore: missing_required_param
+      Model(
+          img: 'assets/entertainment.jpg',
+          name: 'Enrertaiment',
+          name2:
+              'Anything Anything Anything Anything Anything Anything Anything Anything Anything Anything Anything Anything '),
+      // ignore: missing_required_param
+      Model(
+          img: 'assets/entertainment.jpg',
+          name: 'Enrertaiment',
+          name2:
+              'Anything Anything Anything Anything Anything Anything Anything Anything Anything Anything Anything Anything '),
+      // ignore: missing_required_param
+      Model(
+          img: 'assets/entertainment.jpg',
+          name: 'Enrertaiment',
+          name2:
+              'Anything Anything Anything Anything Anything Anything Anything Anything Anything Anything Anything Anything '),
+    ];
+    return SliverList.builder(
       itemCount: category.length,
-      itemBuilder: (context, index) =>
-       VerticalContainer(container: category[index],),);
+      itemBuilder: (context, index) => VerticalContainer(
+        container: category[index],
+      ),
+    );
   }
 }

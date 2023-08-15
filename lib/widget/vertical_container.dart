@@ -9,25 +9,37 @@ class VerticalContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Container(
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              image: DecorationImage(
-                  image: AssetImage(container.img!), fit: BoxFit.fill)),
-          width: 300,
-          height: 200,
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+          child: Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12),
+                image: DecorationImage(
+                    image: AssetImage(container.img!), fit: BoxFit.fill)),
+            width: double.infinity,
+            height: 160,
+          ),
         ),
-        SizedBox(
-          height: 5,
+        Padding(
+          padding: const EdgeInsets.only(left: 15),
+          child: Text(
+            container.name!,
+            style:const TextStyle(fontSize: 20, color: Colors.black),
+          ),
         ),
-        Text(
-          container.name!,
-          style: TextStyle(fontSize: 20, color: Colors.grey),
-        ),
-        SizedBox(
-          height: 5,
+        Padding(
+          padding: const EdgeInsets.only(left: 25),
+          child: Text(
+            container.name2!,
+            style:const TextStyle(
+              fontSize: 15,
+              color: Colors.grey,
+            ),
+            overflow: TextOverflow.ellipsis,
+            maxLines: 2,
+          ),
         ),
       ],
     );

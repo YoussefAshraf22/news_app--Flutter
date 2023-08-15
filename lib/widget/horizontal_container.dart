@@ -10,31 +10,26 @@ class HorizontalContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: category.onTap,
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(right: 10, top: 5),
-            child: Container(
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage(
-                        category.img!,
-                      ),
-                      fit: BoxFit.fill),
-                  borderRadius: BorderRadius.circular(12)),
-              width: 160,
-              height: 85,
-              child: Center(
-                child: Text(category.name!,
-                    style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w400,
-                        color: Colors.white)),
-              ),
-            ),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 3, vertical: 5),
+        child: Container(
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage(
+                    category.img!,
+                  ),
+                  fit: BoxFit.fill),
+              borderRadius: BorderRadius.circular(12)),
+          width: 160,
+          height: 85,
+          child: Center(
+            child: Text(category.name!,
+                style: const TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w400,
+                    color: Colors.white)),
           ),
-        ],
+        ),
       ),
     );
   }
