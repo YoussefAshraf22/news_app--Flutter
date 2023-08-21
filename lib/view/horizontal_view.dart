@@ -18,15 +18,17 @@ class HorizontalView extends StatelessWidget {
   Widget build(BuildContext context) {
     final List<Model> category = [
       Model(
-          img: 'assets/entertainment.jpg',
-          name: 'Enrertaiment',
-          onTap: () {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const EntertainmentPage(),
-                ));
-          }),
+        img: 'assets/business.jpg',
+        name: 'Business',
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const BusinessPage(),
+            ),
+          );
+        },
+      ),
       Model(
         img: 'assets/health.avif',
         name: 'Health',
@@ -40,17 +42,15 @@ class HorizontalView extends StatelessWidget {
         },
       ),
       Model(
-        img: 'assets/business.jpg',
-        name: 'Business',
-        onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const BusinessPage(),
-            ),
-          );
-        },
-      ),
+          img: 'assets/entertainment.jpg',
+          name: 'Enrertaiment',
+          onTap: () {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const EntertainmentPage()),
+            );
+          }),
       Model(
         img: 'assets/science.avif',
         name: 'Science',

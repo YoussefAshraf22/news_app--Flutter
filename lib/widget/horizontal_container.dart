@@ -18,7 +18,7 @@ class HorizontalContainer extends StatelessWidget {
                   image: AssetImage(
                     category.img!,
                   ),
-                  fit: BoxFit.fill),
+                  fit: BoxFit.cover),
               borderRadius: BorderRadius.circular(12)),
           width: 160,
           height: 85,
