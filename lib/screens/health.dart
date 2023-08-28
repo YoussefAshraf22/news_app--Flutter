@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../view/vertical_view.dart';
+import '../widget/build_general_news_widget.dart';
 
 class HealthPage extends StatelessWidget {
   const HealthPage({super.key});
@@ -8,9 +7,9 @@ class HealthPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Health Screen')),
-      body: CustomScrollView(slivers: [
-        VerticalView(),
+      appBar: AppBar(title: const Text('Health Screen')),
+      body: const CustomScrollView(slivers: [
+        BuildGeneralNews(),
       ]),
     );
   }

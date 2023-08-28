@@ -6,7 +6,7 @@ class SciencePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Science Screen')),
+      appBar: AppBar(title: const Text('Science Screen')),
     );
   }
 }

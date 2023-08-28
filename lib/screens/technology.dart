@@ -6,7 +6,7 @@ class TechnologyPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Technology Screen')),
+      appBar: AppBar(title: const Text('Technology Screen')),
     );
   }
 }

@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/widget/component_widget.dart';
 
-import '../models/component_model.dart';
+import '../models/article_model.dart';
 
 class BusinessView extends StatelessWidget {
   const BusinessView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final List<Component> components = [
-      Component(
+    final List<ArticleModel> components = [
+      ArticleModel(
         title:
             'عقب تراجعه 175 جنيه للجرام.. هل تواصل أسعار الذهب الانخفاض خلال الأيام المقبلة؟',
         content:
@@ -19,7 +19,7 @@ class BusinessView extends StatelessWidget {
         urlOnTap:
             'https://amwalalghad.com/2023/08/15/%D8%B9%D9%82%D8%A8-%D8%AA%D8%B1%D8%A7%D8%AC%D8%B9%D9%87-175-%D8%AC%D9%86%D9%8A%D9%87-%D9%84%D9%84%D8%AC%D8%B1%D8%A7%D9%85-%D9%87%D9%84-%D8%AA%D9%88%D8%A7%D8%B5%D9%84-%D8%A3%D8%B3%D8%B9%D8%A7%D8%B1/',
       ),
-      Component(
+      ArticleModel(
         title:
             'عقب تراجعه 175 جنيه للجرام.. هل تواصل أسعار الذهب الانخفاض خلال الأيام المقبلة؟',
         content:
@@ -29,7 +29,7 @@ class BusinessView extends StatelessWidget {
         urlOnTap:
             'https://amwalalghad.com/2023/08/15/%D8%B9%D9%82%D8%A8-%D8%AA%D8%B1%D8%A7%D8%AC%D8%B9%D9%87-175-%D8%AC%D9%86%D9%8A%D9%87-%D9%84%D9%84%D8%AC%D8%B1%D8%A7%D9%85-%D9%87%D9%84-%D8%AA%D9%88%D8%A7%D8%B5%D9%84-%D8%A3%D8%B3%D8%B9%D8%A7%D8%B1/',
       ),
-      Component(
+      ArticleModel(
         title: 'عرض شاشة الاندرويد على التلفاز بالخطوات',
         content:
             'عرض شاشة الاندرويد على التلفاز بالخطوات\nيعد عرض شاشة الاندرويد على التليفزيون الذي نقدمه لكم اليوم من خلال موقعنا الالكتروني زيادة كما هو الحال مع التطور التكنولوجي الحديث ومع التطور في مجال الوسائط المتعددة ومع تطور الحياة وتشجيع الرفاهية وحياة ممتع',
@@ -38,7 +38,7 @@ class BusinessView extends StatelessWidget {
         urlOnTap:
             'https://www.mogazmasr.com/technology-news/252746/%D8%B9%D8%B1%D8%B6-%D8%B4%D8%A7%D8%B4%D8%A9-%D8%A7%D9%84%D8%A7%D9%86%D8%AF%D8%B1%D9%88%D9%8A%D8%AF-%D8%B9%D9%84%D9%89-%D8%A7%D9%84%D8%AA%D9%84%D9%81%D8%A7%D8%B2-%D8%A8%D8%A7%D9%84%D8%AE%D8%B7%D9%88-2',
       ),
-      Component(
+      ArticleModel(
         title:
             'عقب تراجعه 175 جنيه للجرام.. هل تواصل أسعار الذهب الانخفاض خلال الأيام المقبلة؟',
         content:
@@ -48,7 +48,7 @@ class BusinessView extends StatelessWidget {
         urlOnTap:
             'https://amwalalghad.com/2023/08/15/%D8%B9%D9%82%D8%A8-%D8%AA%D8%B1%D8%A7%D8%AC%D8%B9%D9%87-175-%D8%AC%D9%86%D9%8A%D9%87-%D9%84%D9%84%D8%AC%D8%B1%D8%A7%D9%85-%D9%87%D9%84-%D8%AA%D9%88%D8%A7%D8%B5%D9%84-%D8%A3%D8%B3%D8%B9%D8%A7%D8%B1/',
       ),
-      Component(
+      ArticleModel(
         title: 'عرض شاشة الاندرويد على التلفاز بالخطوات',
         content:
             'عرض شاشة الاندرويد على التلفاز بالخطوات\nيعد عرض شاشة الاندرويد على التليفزيون الذي نقدمه لكم اليوم من خلال موقعنا الالكتروني زيادة كما هو الحال مع التطور التكنولوجي الحديث ومع التطور في مجال الوسائط المتعددة ومع تطور الحياة وتشجيع الرفاهية وحياة ممتع',
@@ -60,7 +60,7 @@ class BusinessView extends StatelessWidget {
     ];
     return SliverList.builder(
       itemBuilder: (context, index) =>
-          ComponentWidget(component: components[index]),
+          ComponentWidget(article: components[index]),
       itemCount: components.length,
     );
   }

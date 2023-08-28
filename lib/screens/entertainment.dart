@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/view/horizontal_view.dart';
-import 'package:news_app/view/vertical_view.dart';
 
+import '../widget/build_general_news_widget.dart';
 import 'home_page.dart';
 
 class EntertainmentPage extends StatelessWidget {
@@ -11,20 +11,21 @@ class EntertainmentPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Entertainment'),
+        title: const Text('Entertainment'),
         leading: IconButton(
           onPressed: () {
             Navigator.pushReplacement(context,
                 MaterialPageRoute(builder: (context) => const HomePage()));
           },
-          icon: Icon(Icons.arrow_back_ios_new_rounded, color: Colors.orange),
+          icon: const Icon(Icons.arrow_back_ios_new_rounded,
+              color: Colors.orange),
         ),
       ),
-      body: CustomScrollView(slivers: [
+      body: const CustomScrollView(slivers: [
         SliverToBoxAdapter(
           child: HorizontalView(),
         ),
-        VerticalView(),
+        BuildGeneralNews(),
       ]),
     );
   }

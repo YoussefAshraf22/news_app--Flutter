@@ -3,17 +3,17 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../models/component_model.dart';
+import '../models/article_model.dart';
 
 // ignore: must_be_immutable
 class ComponentWidget extends StatelessWidget {
-  Component component;
-  ComponentWidget({super.key, required this.component});
+  ArticleModel article;
+  ComponentWidget({super.key, required this.article});
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () async {
-        String url = '${component.urlOnTap}';
+        String url = article.urlOnTap;
 
         if (await canLaunch(url)) {
           await launch(url);
@@ -30,7 +30,7 @@ class ComponentWidget extends StatelessWidget {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
                   image: DecorationImage(
-                      image: NetworkImage(component.img!), fit: BoxFit.cover)),
+                      image: NetworkImage(article.img!), fit: BoxFit.cover)),
               width: double.infinity,
               height: 160,
             ),
@@ -38,14 +38,14 @@ class ComponentWidget extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: 15),
             child: Text(
-              component.title!,
+              article.title,
               style: const TextStyle(fontSize: 20, color: Colors.black),
             ),
           ),
           Padding(
             padding: const EdgeInsets.only(left: 25),
             child: Text(
-              component.content!,
+              article.content!,
               style: const TextStyle(
                   fontSize: 15,
                   color: Colors.grey,
@@ -54,7 +54,7 @@ class ComponentWidget extends StatelessWidget {
               maxLines: 2,
             ),
           ),
-         const Divider(
+          const Divider(
             color: Colors.grey,
             thickness: 0.5,
             endIndent: 20,

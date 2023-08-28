@@ -6,7 +6,7 @@ class SportsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Sports Screen')),
+      appBar: AppBar(title: const Text('Sports Screen')),
     );
   }
 }
