@@ -4,21 +4,22 @@ import 'package:news_app/view/general_news_view.dart';
 
 import '../models/article_model.dart';
 
-class FutureBuilderWidget extends StatefulWidget {
-  const FutureBuilderWidget({super.key});
+class FutureBuilderNews extends StatefulWidget {
+  final String category;
+  const FutureBuilderNews({super.key, required this.category});
 
   @override
-  State<FutureBuilderWidget> createState() => _FutureBuilderWidgetState();
+  State<FutureBuilderNews> createState() => _FutureBuilderNewsState();
 }
 
-class _FutureBuilderWidgetState extends State<FutureBuilderWidget> {
+class _FutureBuilderNewsState extends State<FutureBuilderNews> {
   Future<List<ArticleModel>>? future;
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     //to make only one requist whatever how many build
-    future = NewsServices().getNews();
+    future = NewsServices().getNews(category: widget.category);
   }
 
   @override

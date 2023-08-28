@@ -26,11 +26,21 @@ class VerticalContainer extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+
+            // child: ClipRRect(
+            //   borderRadius: BorderRadius.circular(6),
+            //   child: Image.network(
+            //     article.img!,
+            //     height: 200,
+            //     width: double.infinity,
+            //     fit: BoxFit.cover,
+            //   ),
+            // ),
+
             child: Container(
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
-                  image:
-                  DecorationImage(
+                  image: DecorationImage(
                       image: article.img != null
                           ? NetworkImage('${article.img}')
                           : const NetworkImage(

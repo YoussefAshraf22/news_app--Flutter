@@ -22,7 +22,7 @@ class _BuildGeneralNewsState extends State<BuildGeneralNews> {
   }
 
   Future<void> getGeneralNews() async {
-    articles = await NewsServices().getNews();
+    articles = await NewsServices().getNews(category: 'general');
     //end loading after gettin the data
     isLoading = false;
     //to change the widgit after get the information form getNews

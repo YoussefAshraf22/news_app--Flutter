@@ -63,7 +63,9 @@ class HomePage extends StatelessWidget {
             ),
           )),
           // BuildGeneralNews()
-          FutureBuilderWidget()
+          FutureBuilderNews(
+            category: 'general',
+          )
         ]));
   }
 }
